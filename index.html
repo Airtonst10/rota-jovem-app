@@ -2,16 +2,36 @@
 <html>
 <head>
   <meta charset="UTF-8" />
-  <title>Rota Jovem - Mentor IA</title>
-  <script defer src="app.js"></script>
+  <title>Rota Jovem</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Rota Jovem - Mentor IA</h1>
-    <input id="question" placeholder="Digite sua dúvida..." />
-    <button onclick="askAI()">Perguntar</button>
-    <div id="response"></div>
+  <div class="app">
+    <h1>Rota Jovem</h1>
+
+    <div class="card">
+      <h2>Nível: <span id="level">1</span></h2>
+      <p>XP: <span id="xp">0</span></p>
+      <div class="progress-bar">
+        <div id="progress"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Missões do Dia</h3>
+      <button onclick="completeMission(10)">Criar planejamento semanal (+10 XP)</button>
+      <button onclick="completeMission(30)">Criar orçamento mensal (+30 XP)</button>
+      <button onclick="completeMission(50)">Montar currículo profissional (+50 XP)</button>
+    </div>
+
+    <div class="card">
+      <h3>Mentor</h3>
+      <input id="question" placeholder="Digite sua dúvida..." />
+      <button onclick="askAI()">Perguntar</button>
+      <p id="response"></p>
+    </div>
   </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
