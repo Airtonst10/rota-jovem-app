@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Rota Jovem - Mentor IA</title>
+  <script defer src="app.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Rota Jovem - Mentor IA</h1>
+    <input id="question" placeholder="Digite sua dúvida..." />
+    <button onclick="askAI()">Perguntar</button>
+    <div id="response"></div>
+  </div>
+</body>
+</html>
