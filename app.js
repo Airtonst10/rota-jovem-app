@@ -22,37 +22,18 @@ function askAI() {
   const response = document.getElementById("response");
 
   if (question.includes("planejamento")) {
-    response.innerText = "Planejamento Estratégico: defina visão. Tático: metas mensais. Operacional: tarefas diárias.";
-  } else if (question.includes("financeiro")) {
-    response.innerText = "Comece anotando gastos, crie reserva de emergência e defina meta de investimento.";
-  } else if (question.includes("currículo")) {
-    response.innerText = "Currículo: dados pessoais, objetivo claro, experiência, habilidades e formação.";
-  } else {
-    response.innerText = "Defina metas claras e divida em pequenas ações diárias.";
+    response.innerText = "1️⃣ Defina 3 metas principais.\n2️⃣ Divida em tarefas menores.\n3️⃣ Organize por prioridade.";
+  } 
+  else if (question.includes("orçamento")) {
+    response.innerText = "1️⃣ Liste sua renda.\n2️⃣ Liste gastos fixos.\n3️⃣ Defina limite para gastos variáveis.";
+  } 
+  else if (question.includes("currículo")) {
+    response.innerText = "1️⃣ Destaque resultados.\n2️⃣ Use palavras de ação.\n3️⃣ Inclua experiências práticas.";
+  } 
+  else {
+    response.innerText = "Seja específico na sua dúvida para que eu possa ajudar melhor.";
   }
 }
-
-updateUI();
-
-let xp = localStorage.getItem("xp") ? parseInt(localStorage.getItem("xp")) : 0;
-let level = localStorage.getItem("level") ? parseInt(localStorage.getItem("level")) : 1;
-
-updateUI();
-
-function completeMission(amount) {
-  xp += amount;
-
-  if (xp >= 100) {
-    xp = xp - 100;
-    level++;
-  }
-
-  localStorage.setItem("xp", xp);
-  localStorage.setItem("level", level);
-
-  updateUI();
-}
-
 function updateUI() {
   document.getElementById("xp").innerText = xp;
   document.getElementById("level").innerText = level;
