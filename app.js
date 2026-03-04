@@ -33,3 +33,28 @@ function askAI() {
 }
 
 updateUI();
+
+let xp = localStorage.getItem("xp") ? parseInt(localStorage.getItem("xp")) : 0;
+let level = localStorage.getItem("level") ? parseInt(localStorage.getItem("level")) : 1;
+
+updateUI();
+
+function completeMission(amount) {
+  xp += amount;
+
+  if (xp >= 100) {
+    xp = xp - 100;
+    level++;
+  }
+
+  localStorage.setItem("xp", xp);
+  localStorage.setItem("level", level);
+
+  updateUI();
+}
+
+function updateUI() {
+  document.getElementById("xp").innerText = xp;
+  document.getElementById("level").innerText = level;
+  document.getElementById("progress").style.width = xp + "%";
+}
